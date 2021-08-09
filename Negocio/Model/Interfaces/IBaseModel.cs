@@ -1,4 +1,4 @@
-﻿namespace Negocio.Modelo.Interfaces
+﻿namespace Infra.Model.Interfaces
 {
     public interface IBaseModel
     {

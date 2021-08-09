@@ -1,10 +1,9 @@
-﻿using Negocio.Dados.Interfaces;
-using Negocio.Modelo;
-using Negocio.Modelo.Interfaces;
+﻿using Infra.Data.Interfaces;
+using Infra.Model.Interfaces;
 using System;
 using System.Collections.Generic;
 
-namespace Negocio.Dados
+namespace Infra.Data
 {
     public class SecondRepository : Repository, ISecondRepository
     {
@@ -21,19 +20,15 @@ namespace Negocio.Dados
             _dataAccess.Create(model);
         }
 
-        public IBaseModel GetById(int id)
+        public override IBaseModel GetById(int id)
         {
-            return new SecondModel { Id = 1, Name = "Arley", ExpirationDate = DateTime.Now };
+            return _dataAccess.GetById(id);
         }
 
         public override ICollection<IBaseModel> GetAll()
         {
             Console.WriteLine("get all second repository");
-            return new List<IBaseModel>()
-            {
-                new FirstModel { Name = "Arley2", Id = Guid.NewGuid(), ExpirationDate = DateTime.Now },
-                new FirstModel { Name = "Nuno2", Id = Guid.NewGuid(), ExpirationDate = DateTime.Now }
-            };
+            return _dataAccess.GetAll();
         }
 
         public override void Update(IBaseModel model)
@@ -42,7 +37,7 @@ namespace Negocio.Dados
             base.Update(model);
         }
 
-        public void Delete(int id)
+        public override void Delete(int id)
         {
             Console.WriteLine("delete second repository");
             _dataAccess.Delete(id);

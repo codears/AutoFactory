@@ -1,9 +1,10 @@
-﻿using Negocio.Dados.Interfaces;
-using Negocio.Modelo.Interfaces;
+﻿using Infra.Data.Interfaces;
+using Infra.Model;
+using Infra.Model.Interfaces;
 using System;
 using System.Collections.Generic;
 
-namespace Negocio.Dados
+namespace Infra.Data
 {
     public class DataAccess : IDataAccess
     {
@@ -20,13 +21,16 @@ namespace Negocio.Dados
         public ICollection<IBaseModel> GetAll()
         {
             Console.WriteLine("Get all data access");
-            return default;
+            return new List<IBaseModel>()
+            {
+                new SecondModel { Name = "Arley2", Id = 1, ExpirationDate = DateTime.Now },
+                new SecondModel { Name = "Nuno2", Id = 2, ExpirationDate = DateTime.Now }
+            };
         }
 
         public IBaseModel GetById(object id)
         {
-            Console.WriteLine("Get by id data access");
-            return default;
+            return new SecondModel { Id = 1, Name = "Arley", ExpirationDate = DateTime.Now };
         }
 
         public void Update(IBaseModel model)

@@ -1,6 +1,6 @@
 ﻿using Autofac;
 using AutoFactory.Config;
-using Negocio;
+using Services;
 using System;
 
 namespace AutoFactory

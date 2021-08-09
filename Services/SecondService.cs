@@ -1,12 +1,21 @@
-﻿using Negocio.Dados.Interfaces;
-using Negocio.Modelo.Interfaces;
-using Negocio.Negocio.Interfaces;
-using System;
+﻿using Infra.Data.Interfaces;
+using Infra.Model.Interfaces;
 using System.Collections.Generic;
 
-namespace Negocio.Negocio
-{
-    public class SecondService : ISecondService
+namespace Services{
+    namespace Interfaces
+    {
+        public interface ISecondService
+        {
+            ICollection<IBaseModel> GetAll();
+            IBaseModel GetById(int id);
+            void Update(IBaseModel model);
+            void Delete(int id);
+            void Create(IBaseModel model);
+        }
+    }
+
+    public class SecondService : Interfaces.ISecondService
     {
         ISecondRepository _secondRepository;
 

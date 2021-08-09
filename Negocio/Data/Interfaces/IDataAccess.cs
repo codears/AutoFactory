@@ -1,15 +1,15 @@
-﻿using Negocio.Modelo.Interfaces;
+﻿using Infra.Model.Interfaces;
 using System;
 using System.Collections.Generic;
 
-namespace Negocio.Dados.Interfaces
+namespace Infra.Data.Interfaces
 {
-    public interface IFirstRepository
+    public interface IDataAccess
     {
         ICollection<IBaseModel> GetAll();
-        IBaseModel GetById(Guid id);
+        IBaseModel GetById(object id);
         void Update(IBaseModel model);
-        void Delete(Guid id);
+        void Delete(object id);
         void Create(IBaseModel model);
     }
 }

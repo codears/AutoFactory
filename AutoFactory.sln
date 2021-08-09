@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.31515.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoFactory", "AutoFactory\AutoFactory.csproj", "{70CE1845-A628-4792-B91A-D30DFE1F090C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Negocio", "Negocio\Negocio.csproj", "{DDB71B4F-3701-43B2-BE1C-25DADD3D5629}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infra", "Negocio\Infra.csproj", "{DDB71B4F-3701-43B2-BE1C-25DADD3D5629}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{07E09ECA-68B7-4490-866D-275E467E3D71}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{DDB71B4F-3701-43B2-BE1C-25DADD3D5629}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DDB71B4F-3701-43B2-BE1C-25DADD3D5629}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DDB71B4F-3701-43B2-BE1C-25DADD3D5629}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07E09ECA-68B7-4490-866D-275E467E3D71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07E09ECA-68B7-4490-866D-275E467E3D71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07E09ECA-68B7-4490-866D-275E467E3D71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07E09ECA-68B7-4490-866D-275E467E3D71}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

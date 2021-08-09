@@ -1,9 +1,12 @@
 ﻿using Autofac;
-using Negocio;
-using Negocio.Dados;
-using Negocio.Dados.Interfaces;
-using Negocio.Negocio;
-using Negocio.Negocio.Interfaces;
+using Infra.Data;
+using Infra.Data.Interfaces;
+using Infra.Model;
+using Infra.Model.Interfaces;
+using Microsoft.EntityFrameworkCore;
+using Negocio.Context;
+using Services;
+using Services.Interfaces;
 
 namespace AutoFactory.Config
 {
@@ -21,10 +24,10 @@ namespace AutoFactory.Config
             builder.RegisterType<FirstService>().As<IFirstService>();
             builder.RegisterType<SecondService>().As<ISecondService>();
             builder.RegisterType<DataAccess>().As<IDataAccess>();
+            builder.RegisterType<BaseModel>().As<IBaseModel>();
+            builder.RegisterType<DbContextOptionsBuilder>().AsSelf();
 
-            //builder.RegisterAssemblyTypes(Assembly.Load(nameof(Negocio)))
-            //    .Where(n => n.Namespace.Contains("Modelo"))
-            //    .As(t => t.GetInterfaces().FirstOrDefault(i => i.Name == $"I{t.Name}"));
+            builder.RegisterType<SimpleContext>().AsSelf();
 
             return builder.Build();
         }

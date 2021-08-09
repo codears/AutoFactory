@@ -1,8 +1,8 @@
-﻿using Negocio.Modelo.Interfaces;
+﻿using Infra.Model.Interfaces;
 using System;
 using System.Collections.Generic;
 
-namespace Negocio.Dados.Interfaces
+namespace Infra.Data.Interfaces
 {
     public interface IRepository
     {
